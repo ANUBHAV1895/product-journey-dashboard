@@ -4,7 +4,8 @@ export type EntryCategory =
   | "teardown"
   | "experiment"
   | "learning"
-  | "certification";
+  | "certification"
+  | "wireframe";
 
 export const CATEGORY_LABELS: Record<EntryCategory, string> = {
   "case-study": "Case Studies",
@@ -13,6 +14,7 @@ export const CATEGORY_LABELS: Record<EntryCategory, string> = {
   experiment: "Experiments / Projects",
   learning: "Learnings / Notes",
   certification: "Certifications / Courses",
+  wireframe: "Wireframes",
 };
 
 export const CATEGORY_SINGULAR: Record<EntryCategory, string> = {
@@ -22,6 +24,7 @@ export const CATEGORY_SINGULAR: Record<EntryCategory, string> = {
   experiment: "Experiment / Project",
   learning: "Learning / Note",
   certification: "Certification / Course",
+  wireframe: "Wireframe",
 };
 
 export type Tag =

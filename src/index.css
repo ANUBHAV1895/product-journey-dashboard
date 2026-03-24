@@ -15,10 +15,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    --primary: 220 60% 20%;
-    --primary-foreground: 40 20% 98%;
+    --primary: 250 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 15% 94%;
+    --secondary: 220 20% 94%;
     --secondary-foreground: 220 20% 10%;
 
     --muted: 40 10% 95%;
@@ -32,32 +32,40 @@
 
     --border: 40 12% 90%;
     --input: 40 12% 90%;
-    --ring: 220 60% 20%;
+    --ring: 250 70% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 40 20% 97%;
-    --sidebar-foreground: 220 15% 30%;
-    --sidebar-primary: 220 60% 20%;
-    --sidebar-primary-foreground: 40 20% 98%;
-    --sidebar-accent: 40 15% 93%;
-    --sidebar-accent-foreground: 220 20% 10%;
-    --sidebar-border: 40 12% 90%;
-    --sidebar-ring: 220 60% 20%;
+    --sidebar-background: 250 60% 98%;
+    --sidebar-foreground: 250 20% 30%;
+    --sidebar-primary: 250 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 40% 94%;
+    --sidebar-accent-foreground: 250 30% 20%;
+    --sidebar-border: 250 20% 92%;
+    --sidebar-ring: 250 70% 55%;
 
     --font-display: 'Newsreader', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    --tag-prd: 220 70% 94%;
-    --tag-prd-text: 220 60% 30%;
-    --tag-research: 168 50% 92%;
+    --tag-prd: 220 80% 92%;
+    --tag-prd-text: 220 70% 35%;
+    --tag-research: 168 60% 90%;
     --tag-research-text: 168 60% 25%;
-    --tag-uiux: 280 50% 93%;
-    --tag-uiux-text: 280 50% 30%;
-    --tag-metrics: 30 70% 93%;
-    --tag-metrics-text: 30 60% 30%;
-    --tag-testing: 0 50% 93%;
-    --tag-testing-text: 0 50% 30%;
+    --tag-uiux: 290 60% 92%;
+    --tag-uiux-text: 290 50% 35%;
+    --tag-metrics: 30 80% 90%;
+    --tag-metrics-text: 30 70% 30%;
+    --tag-testing: 350 70% 92%;
+    --tag-testing-text: 350 60% 35%;
+
+    --category-case-study: 220 80% 55%;
+    --category-prd: 250 70% 55%;
+    --category-teardown: 168 60% 40%;
+    --category-experiment: 30 80% 50%;
+    --category-learning: 290 60% 50%;
+    --category-certification: 350 70% 50%;
+    --category-wireframe: 200 70% 50%;
   }
 
   .dark {
@@ -70,8 +78,8 @@
     --popover: 220 18% 10%;
     --popover-foreground: 40 15% 92%;
 
-    --primary: 40 15% 92%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 250 70% 60%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 15%;
     --secondary-foreground: 40 15% 92%;
@@ -87,27 +95,35 @@
 
     --border: 220 15% 18%;
     --input: 220 15% 18%;
-    --ring: 40 15% 92%;
+    --ring: 250 70% 60%;
 
-    --sidebar-background: 220 18% 9%;
-    --sidebar-foreground: 40 10% 70%;
-    --sidebar-primary: 40 15% 92%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 14%;
-    --sidebar-accent-foreground: 40 15% 92%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 40 15% 92%;
+    --sidebar-background: 250 20% 9%;
+    --sidebar-foreground: 250 10% 70%;
+    --sidebar-primary: 250 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 20% 14%;
+    --sidebar-accent-foreground: 250 15% 92%;
+    --sidebar-border: 250 15% 18%;
+    --sidebar-ring: 250 70% 60%;
 
     --tag-prd: 220 50% 18%;
     --tag-prd-text: 220 60% 75%;
     --tag-research: 168 40% 15%;
     --tag-research-text: 168 50% 70%;
-    --tag-uiux: 280 40% 18%;
-    --tag-uiux-text: 280 50% 72%;
+    --tag-uiux: 290 40% 18%;
+    --tag-uiux-text: 290 50% 72%;
     --tag-metrics: 30 50% 18%;
     --tag-metrics-text: 30 60% 72%;
-    --tag-testing: 0 40% 18%;
-    --tag-testing-text: 0 50% 72%;
+    --tag-testing: 350 40% 18%;
+    --tag-testing-text: 350 50% 72%;
+
+    --category-case-study: 220 70% 60%;
+    --category-prd: 250 65% 60%;
+    --category-teardown: 168 55% 45%;
+    --category-experiment: 30 70% 55%;
+    --category-learning: 290 55% 55%;
+    --category-certification: 350 65% 55%;
+    --category-wireframe: 200 65% 55%;
   }
 }
 
@@ -128,11 +144,11 @@
 
 @layer components {
   .entry-card {
-    @apply bg-card rounded-lg border border-border p-5 transition-all duration-200;
+    @apply bg-card rounded-xl border border-border p-5 transition-all duration-200 shadow-sm;
   }
   .entry-card:hover {
-    @apply shadow-md border-accent/30;
-    transform: translateY(-1px);
+    @apply shadow-lg border-primary/30;
+    transform: translateY(-2px);
   }
 
   .tag-badge {

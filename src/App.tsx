@@ -10,6 +10,7 @@ import TeardownPage from "./pages/TeardownPage";
 import ExperimentPage from "./pages/ExperimentPage";
 import LearningPage from "./pages/LearningPage";
 import CertificationPage from "./pages/CertificationPage";
+import WireframePage from "./pages/WireframePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/experiment" element={<ExperimentPage />} />
           <Route path="/learning" element={<LearningPage />} />
           <Route path="/certification" element={<CertificationPage />} />
+          <Route path="/wireframe" element={<WireframePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

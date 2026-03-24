@@ -7,6 +7,7 @@ import {
   BookOpen,
   Award,
   Telescope,
+  PenTool,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -33,6 +34,7 @@ const sectionItems = [
   { title: "Experiments", url: "/experiment", icon: FlaskConical },
   { title: "Learnings", url: "/learning", icon: BookOpen },
   { title: "Certifications", url: "/certification", icon: Award },
+  { title: "Wireframes", url: "/wireframe", icon: PenTool },
 ];
 
 export function AppSidebar() {
