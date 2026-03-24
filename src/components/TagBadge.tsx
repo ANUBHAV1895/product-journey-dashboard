@@ -7,6 +7,11 @@ const TAG_STYLES: Record<string, string> = {
   "UI/UX": "bg-tag-uiux text-tag-uiux-text",
   Metrics: "bg-tag-metrics text-tag-metrics-text",
   "A/B Testing": "bg-tag-testing text-tag-testing-text",
+  Strategy: "bg-tag-strategy text-tag-strategy-text",
+  Growth: "bg-tag-growth text-tag-growth-text",
+  Analytics: "bg-tag-analytics text-tag-analytics-text",
+  "User Research": "bg-tag-user-research text-tag-user-research-text",
+  Roadmap: "bg-tag-roadmap text-tag-roadmap-text",
 };
 
 const DEFAULT_STYLE = "bg-secondary text-secondary-foreground";
@@ -27,10 +32,10 @@ export function TagBadge({
     <span
       onClick={onClick}
       className={cn(
-        "tag-badge cursor-default transition-all",
+        "tag-badge cursor-default",
         style,
         onClick && "cursor-pointer hover:opacity-80",
-        active && "ring-2 ring-accent ring-offset-1",
+        active && "ring-2 ring-primary ring-offset-1",
         className
       )}
     >
