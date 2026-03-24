@@ -10,6 +10,7 @@ import {
   Award,
   Telescope,
   ArrowRight,
+  PenTool,
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,7 @@ const CATEGORY_ICONS: Record<EntryCategory, React.ElementType> = {
   experiment: FlaskConical,
   learning: BookOpen,
   certification: Award,
+  wireframe: PenTool,
 };
 
 const CATEGORY_ROUTES: Record<EntryCategory, string> = {
@@ -33,6 +35,17 @@ const CATEGORY_ROUTES: Record<EntryCategory, string> = {
   experiment: "/experiment",
   learning: "/learning",
   certification: "/certification",
+  wireframe: "/wireframe",
+};
+
+const CATEGORY_COLORS: Record<EntryCategory, string> = {
+  "case-study": "bg-[hsl(var(--category-case-study))]",
+  prd: "bg-[hsl(var(--category-prd))]",
+  teardown: "bg-[hsl(var(--category-teardown))]",
+  experiment: "bg-[hsl(var(--category-experiment))]",
+  learning: "bg-[hsl(var(--category-learning))]",
+  certification: "bg-[hsl(var(--category-certification))]",
+  wireframe: "bg-[hsl(var(--category-wireframe))]",
 };
 
 export default function DashboardHome() {
@@ -119,16 +132,16 @@ export default function DashboardHome() {
 
       {/* Stats */}
       <section className="grid grid-cols-3 gap-4">
-        <div className="entry-card text-center">
-          <p className="text-2xl font-display font-bold text-foreground">{entries.length}</p>
+        <div className="entry-card text-center bg-[hsl(var(--category-prd)/0.08)] border-[hsl(var(--category-prd)/0.2)]">
+          <p className="text-2xl font-display font-bold text-primary">{entries.length}</p>
           <p className="text-xs text-muted-foreground mt-0.5">Total Entries</p>
         </div>
-        <div className="entry-card text-center">
+        <div className="entry-card text-center bg-[hsl(var(--category-teardown)/0.08)] border-[hsl(var(--category-teardown)/0.2)]">
           <p className="text-2xl font-display font-bold text-accent">{completedCount}</p>
           <p className="text-xs text-muted-foreground mt-0.5">Completed</p>
         </div>
-        <div className="entry-card text-center">
-          <p className="text-2xl font-display font-bold text-foreground">{inProgressCount}</p>
+        <div className="entry-card text-center bg-[hsl(var(--category-experiment)/0.08)] border-[hsl(var(--category-experiment)/0.2)]">
+          <p className="text-2xl font-display font-bold text-[hsl(var(--category-experiment))]">{inProgressCount}</p>
           <p className="text-xs text-muted-foreground mt-0.5">In Progress</p>
         </div>
       </section>
@@ -139,8 +152,8 @@ export default function DashboardHome() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {categoryCounts.map(({ category, label, count, Icon, route }) => (
             <Link key={category} to={route} className="entry-card group/card flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
-                <Icon className="h-5 w-5 text-muted-foreground" />
+              <div className={`h-10 w-10 rounded-lg ${CATEGORY_COLORS[category]} flex items-center justify-center shrink-0`}>
+                <Icon className="h-5 w-5 text-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-foreground truncate">{label}</p>
