@@ -6,9 +6,9 @@ const PROFILE_KEY = "pm-portfolio-profile";
 const FILES_KEY = "pm-portfolio-files";
 
 const DEFAULT_PROFILE: UserProfile = {
-  name: "Your Name",
-  role: "Aspiring Product Manager",
-  bio: "Passionate about building products that solve real problems. Currently learning product management through hands-on projects, case studies, and continuous experimentation.",
+  name: "Anubhav Shubham",
+  role: "Associate Product Manager",
+  bio: "Passionate about building products that solve real problems. Currently working as an Associate Product Manager focusing on hands-on projects, case studies, and continuous experimentation.",
 };
 
 function loadEntries(): PortfolioEntry[] {
